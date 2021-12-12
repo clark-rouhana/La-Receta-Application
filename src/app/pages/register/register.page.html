@@ -1,0 +1,66 @@
+<ion-content>
+  <div class="ion-padding">
+    <div class="logo">
+      <ion-img src="../../../assets/images/la_receta_logo.png" alt="">
+      </ion-img>
+    </div>
+    <form #f="ngForm" (ngSubmit)="register(f)" class="ion-padding">
+      <ion-toolbar>
+        <ion-title>Register</ion-title>
+      </ion-toolbar>
+      <ion-item id="name" class='{{ errors.name ? "error" : "" }}' lines="none">
+        <ion-label position="floating">Username</ion-label>
+        <ion-input
+          (keyup)="removeError($event)"
+          type="text"
+          ngModel
+          name="name"
+        ></ion-input>
+      </ion-item>
+      <span id="span-name">{{ errors.name}}</span>
+
+      <ion-item
+        id="email"
+        class='{{ errors.email ? "error" : "" }}'
+        lines="none"
+      >
+        <ion-label position="floating">Email Address</ion-label>
+        <ion-input
+          (keyup)="removeError($event)"
+          type="email"
+          ngModel
+          name="email"
+        ></ion-input>
+      </ion-item>
+      <span id="span-email">{{ errors.email}}</span>
+
+      <ion-item
+        id="password"
+        class='{{ errors.password ? "error" : "" }}'
+        lines="none"
+      >
+        <ion-label position="floating">Password</ion-label>
+        <ion-input
+          (keyup)="removeError($event)"
+          type="password"
+          ngModel
+          name="password"
+        ></ion-input>
+      </ion-item>
+      <span id="span-password">{{ errors.password}}</span>
+
+      <ion-item lines="none">
+        <ion-label position="floating">Confirm Password</ion-label>
+        <ion-input type="password" ngModel name="confirmPass"></ion-input>
+      </ion-item>
+      <div class="container-form-btn">
+        <ion-button type="submit" expand="block">Register</ion-button>
+      </div>
+      <p class="form-text">
+        <a class="form-link" (click)="login()"
+          >Already have an account? Sign in</a
+        >
+      </p>
+    </form>
+  </div>
+</ion-content>

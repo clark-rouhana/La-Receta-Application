@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-title>Contact Us</ion-title>
+  <form #f="ngForm" (ngSubmit)="contactUs(f)">
+    <ion-item>
+      <ion-label position="stacked"
+        >NAME <span id="span-name">{{ errors.name}}</span></ion-label
+      >
+      <ion-input
+        (keyup)="removeError($event)"
+        name="name"
+        ngModel
+        type="text"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked"
+        >EMAIL <span id="span-email">{{ errors.email}}</span></ion-label
+      >
+      <ion-input
+        (keyup)="removeError($event)"
+        name="email"
+        ngModel
+        type="email"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked"
+        >SUBJECT <span id="span-subject">{{ errors.subject}}</span></ion-label
+      >
+      <ion-input
+        (keyup)="removeError($event)"
+        name="subject"
+        ngModel
+        type="text"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked"
+        >MESSAGE <span id="span-message">{{ errors.message}}</span></ion-label
+      >
+      <ion-textarea
+        (keyup)="removeError($event)"
+        name="message"
+        ngModel
+        type="text"
+      ></ion-textarea>
+    </ion-item>
+
+    <ion-button type="submit" expand="block">Send Message</ion-button>
+  </form>
+</ion-content>

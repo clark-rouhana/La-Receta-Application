@@ -1,0 +1,53 @@
+<ion-app>
+  <ion-menu menuId="main-menu" contentId="main">
+    <div class="pp-edit">
+      <img
+        id="display_profile_edit"
+        src="{{
+          user?.path
+            ? user.path
+            : 'https://img.icons8.com/wired/100/000000/guest-male.png'
+        }}"
+        alt=""
+      />
+      <h1>@{{ username }}</h1>
+    </div>
+
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle>
+          <ion-item routerLink="/home" lines="none">
+            <ion-icon slot="start" name="home-outline"></ion-icon>
+            <ion-label>Home</ion-label>
+          </ion-item></ion-menu-toggle
+        ><ion-menu-toggle
+          ><ion-item routerLink="/profile" lines="none">
+            <ion-icon slot="start" name="person-outline"></ion-icon>
+            <ion-label>Profile</ion-label>
+          </ion-item></ion-menu-toggle
+        ><ion-menu-toggle
+          ><ion-item routerLink="/search" lines="none">
+            <ion-icon slot="start" name="search-outline"></ion-icon>
+            <ion-label>Search</ion-label>
+          </ion-item></ion-menu-toggle
+        ><ion-menu-toggle
+          ><ion-item routerLink="/notifications" lines="none">
+            <ion-icon slot="start" name="notifications-outline"></ion-icon>
+            <ion-label>Notifications</ion-label>
+          </ion-item></ion-menu-toggle
+        ><ion-menu-toggle
+          ><ion-item routerLink="/settings" lines="none">
+            <ion-icon slot="start" name="settings-outline"></ion-icon>
+            <ion-label>Settings</ion-label>
+          </ion-item></ion-menu-toggle
+        ><ion-menu-toggle
+          ><ion-item routerLink="/contact" lines="none">
+            <ion-icon slot="start" name="mail-outline"></ion-icon>
+            <ion-label>Contact</ion-label>
+          </ion-item></ion-menu-toggle
+        >
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main"></ion-router-outlet>
+</ion-app>

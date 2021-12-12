@@ -1,0 +1,62 @@
+<ion-content>
+  <div class="ion-padding">
+    <div class="logo">
+      <ion-img src="../../../assets/images/la_receta_logo.png" alt="">
+      </ion-img>
+    </div>
+    <form #f="ngForm" (ngSubmit)="login(f)" class="ion-padding">
+      <ion-toolbar>
+        <ion-title>Login</ion-title>
+      </ion-toolbar>
+      <span class="wrong">{{ errors.wrong }}</span>
+
+      <ion-item
+        id="email"
+        class='{{ errors.email ? "error" : "" }}'
+        lines="none"
+      >
+        <ion-label position="floating">Email</ion-label>
+        <ion-input
+          (keyup)="removeError($event)"
+          type="email"
+          name="email"
+          ngModel
+        ></ion-input>
+      </ion-item>
+      <span id="span-email">{{ errors.email}}</span>
+
+      <ion-item
+        id="password"
+        class='{{ errors.password ? "error" : "" }}'
+        lines="none"
+      >
+        <ion-label position="floating">Password</ion-label>
+        <ion-input
+          (keyup)="removeError($event)"
+          type="password"
+          name="password"
+          ngModel
+        ></ion-input>
+      </ion-item>
+      <span id="span-password">{{ errors.password }}</span>
+
+      <div class="form-check">
+        <ion-checkbox slot="end" color="#ff8e8e" name="remember"></ion-checkbox>
+        <ion-label>Remember Me</ion-label>
+      </div>
+      <div class="container-form-btn">
+        <ion-button type="submit" expand="block">Login</ion-button>
+
+        <!-- <ion-button class="form-btn" type="submit">Login</ion-button> -->
+      </div>
+      <p class="form-text form-forgot">
+        <a href="" class="form-link">Forgot Your Password?</a>
+      </p>
+      <p class="form-text form-create">
+        <a class="form-link" (click)="signup()"
+          >Don't have an account? Create account</a
+        >
+      </p>
+    </form>
+  </div>
+</ion-content>

@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-title>Settings</ion-title>
+  <div class="button">
+    <ion-button expand="block"> About </ion-button>
+    <ion-button expand="block"> Delete Account </ion-button>
+    <ion-button expand="block" (click)="log_out()"> Logout </ion-button>
+  </div>
+</ion-content>

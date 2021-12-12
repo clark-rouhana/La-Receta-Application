@@ -1,0 +1,145 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="whole-container">
+    <div class="profile-container">
+      <div class="pp-img">
+        <img
+          id="display_profile"
+          src="{{ user?.path ? user.path : 'https://img.icons8.com/wired/100/000000/guest-male.png'}}"
+          alt=""
+        />
+      </div>
+      <div class="naming">
+        <p id="name">{{ username }}</p>
+        <p id="biography">{{ bio }}</p>
+
+        <div class="edit_profile_button">
+          <ion-button (click)="_openEdit()"> Edit Profile </ion-button>
+        </div>
+      </div>
+    </div>
+
+    <div class="count-follow">
+      <div class="row recipes">
+        <p>{{ user?.recipes ? user.recipes : "0" }}</p>
+        <p>Recipes</p>
+      </div>
+      <div class="row followers">
+        <p>0</p>
+        <p>Followers</p>
+      </div>
+      <div class="row following">
+        <p>0</p>
+        <p>Following</p>
+      </div>
+    </div>
+
+    <div class="categ-title">
+      <ion-title>Categories</ion-title>
+    </div>
+  </div>
+
+  <!-- <div class="categories-tabs"> -->
+  <!-- <ion-tabs>
+        <ion-tab-bar>
+          <ion-tab-button tab="savoury">
+            <ion-img
+              src="https://img.icons8.com/wired/25/000000/hamburger.png"
+            ></ion-img>
+            <ion-label>Savoury</ion-label>
+          </ion-tab-button>
+          <ion-tab-button tab="salad">
+            <ion-img
+              src="https://img.icons8.com/wired/25/000000/broccoli.png"
+            ></ion-img>
+            <ion-label>Salad</ion-label>
+          </ion-tab-button>
+          <ion-tab-button tab="sweet">
+            <ion-img
+              src="https://img.icons8.com/wired/25/000000/double-chocolate-cake.png"
+            ></ion-img>
+            <ion-label>Sweet</ion-label>
+          </ion-tab-button>
+          <ion-tab-button tab="drink">
+            <ion-img
+              src="https://img.icons8.com/wired/25/000000/soda-water.png"
+            ></ion-img>
+            <ion-label>Drink</ion-label>
+          </ion-tab-button>
+        </ion-tab-bar>
+      </ion-tabs> -->
+
+  <!-- <div class="button-container">
+      <a (click)="_openSavoury()" class="button savoury">
+        <ion-img
+          src="https://img.icons8.com/wired/100/000000/hamburger.png"
+        ></ion-img>
+        <ion-label>Savoury</ion-label></a
+      >
+      <a (click)="_openSalad()" class="button salad">
+        <ion-img
+          src="https://img.icons8.com/wired/100/000000/broccoli.png"
+        ></ion-img>
+        <ion-label>Salad</ion-label></a
+      >
+      <a (click)="_openSweet()" class="button sweet"
+        ><ion-img
+          src="https://img.icons8.com/wired/100/000000/double-chocolate-cake.png"
+        ></ion-img>
+        <ion-label>Sweet</ion-label></a
+      >
+      <a (click)="_openDrink()" class="button drink"
+        ><ion-img
+          src="https://img.icons8.com/wired/100/000000/soda-water.png"
+        ></ion-img>
+        <ion-label>Drink</ion-label></a
+      >
+    </div> -->
+
+  <div class="main-div ion-padding">
+    <div class="list">
+      <ion-list>
+        <ion-item-sliding
+          *ngFor="let recipe of recipes"
+          routerLink="/view-recipe/{{ recipe.id }}"
+        >
+          <ion-item button>
+            <ion-avatar slot="start">
+              <img src="{{ recipe.path }}" alt="" />
+            </ion-avatar>
+            <ion-label
+              >{{ recipe.title }}
+              <p
+                [ngClass]="{savoury: recipe.category == 'savoury',salad: recipe.category == 'salad',sweet: recipe.category == 'sweet',drink: recipe.category == 'drink'}"
+              >
+                {{ recipe.category }}
+              </p>
+            </ion-label>
+          </ion-item>
+          <ion-item-options side="start" (ionSwipe)="editProfile(recipe.id)">
+            <ion-item-option class="start" color="dark" expandable>
+              <ion-icon name="create-outline"></ion-icon>
+            </ion-item-option>
+          </ion-item-options>
+
+          <ion-item-options side="end" (ionSwipe)="deleteRecipe(recipe.id)">
+            <ion-item-option class="end" color="danger" expandable>
+              <ion-icon name="trash-outline"></ion-icon>
+            </ion-item-option>
+          </ion-item-options>
+        </ion-item-sliding>
+      </ion-list>
+    </div>
+    <ion-fab-button color="dark" routerLink="/create-edit/add">
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-fab-button>
+  </div>
+  <!-- </div> -->
+</ion-content>

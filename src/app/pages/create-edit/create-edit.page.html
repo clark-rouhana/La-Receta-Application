@@ -1,0 +1,138 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <ion-icon
+    name="arrow-back-outline"
+    class="ion-padding"
+    routerLink="/profile"
+  ></ion-icon>
+  <ion-title>{{ isEdit ? 'Edit the' : "Create a" }} recipe</ion-title>
+  <form
+    enctype="multipart/form-data"
+    #f="ngForm"
+    (ngSubmit)="addRecipe(f)"
+    class="form"
+  >
+    <div class="upload-container">
+      <div class="image-upload">
+        <img
+          id="img"
+          src="{{ recipe?.path? recipe.path : '../../../assets/images/recipe-image.png' }}"
+          alt=""
+          for="file"
+          onclick="document.getElementById('file').click()"
+        />
+        <input
+          ngModel
+          name="image"
+          type="file"
+          id="file"
+          (change)="changeValue($event); chooseFile($event); removeError($event)"
+          accept="image/*"
+          style="display: none"
+        />
+      </div>
+    </div>
+    <span id="span-upload">{{ errors.upload}}</span>
+
+    <ion-item id="title" lines="none" class='{{ errors.title ? "error" : "" }}'>
+      <ion-label position="stacked">Recipe Name</ion-label>
+      <ion-input
+        (keyup)="removeError($event)"
+        type="text"
+        ngModel
+        name="title"
+        id="title"
+        value="{{ recipe?.title }}"
+        (keyup)="changeValue($event)"
+      ></ion-input>
+    </ion-item>
+    <span id="span-title">{{ errors.title}}</span>
+
+    <ion-item
+      id="caption"
+      lines="none"
+      class='{{ errors.caption? "error" : "" }}'
+    >
+      <ion-label position="stacked">Caption</ion-label>
+      <ion-input
+        (keyup)="removeError($event)"
+        type="text"
+        ngModel
+        name="caption"
+        value="{{ recipe?.caption }}"
+        (keyup)="changeValue($event)"
+      ></ion-input>
+    </ion-item>
+    <span id="span-caption">{{ errors.caption}}</span>
+
+    <ion-item
+      id="ingredients"
+      class='{{ errors.ingredients ? "error" : "" }}'
+      lines="none"
+    >
+      <ion-label position="stacked">Ingredients</ion-label>
+      <ion-textarea
+        (keyup)="removeError($event)"
+        type="text"
+        ngModel
+        name="ingredients"
+        value="{{ recipe?.ingredients }}"
+        (keyup)="changeValue($event)"
+      ></ion-textarea>
+    </ion-item>
+    <span id="span-ingredients">{{ errors.ingredients}}</span>
+
+    <ion-item
+      id="instructions"
+      class='{{ errors.instructions ? "error" : "" }}'
+      lines="none"
+    >
+      <ion-label position="stacked">Instructions</ion-label>
+      <ion-textarea
+        (keyup)="removeError($event)"
+        type="text"
+        ngModel
+        name="instructions"
+        value="{{ recipe?.instructions }}"
+        (keyup)="changeValue($event)"
+      ></ion-textarea>
+    </ion-item>
+    <span id="span-instructions">{{ errors.instructions}}</span>
+
+    <ion-item
+      id="category"
+      class='{{ errors.category ? "error" : "" }}'
+      class="select"
+    >
+      <ion-select
+        interface="action-sheet"
+        placeholder="Select Category"
+        ngModel
+        name="category"
+        value="{{ recipe?.category }}"
+        (ionChange)="changeValue($event); removeError($event)"
+      >
+        <ion-select-option value="savoury">Savoury</ion-select-option>
+        <ion-select-option value="salad">Salad</ion-select-option>
+        <ion-select-option value="sweet">Sweet</ion-select-option>
+        <ion-select-option value="drink">Drink</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <span id="span-category">{{ errors.category}}</span>
+
+    <ion-button type="submit" expand="block"
+      >{{ isEdit ? 'Edit' : "Create" }}&nbsp;<ion-spinner
+        *ngIf="loading"
+      ></ion-spinner
+    ></ion-button>
+  </form>
+</ion-content>

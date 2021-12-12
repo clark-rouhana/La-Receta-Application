@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-title class="title">Search</ion-title>
+
+  <ion-searchbar animated (ionChange)="search($event)"></ion-searchbar>
+  <div class="main-list">
+    <ion-item-sliding
+      *ngFor="let recipe of recipes"
+      routerLink="/view-recipe/{{ recipe.id }}"
+    >
+      <ion-item button>
+        <ion-avatar slot="start">
+          <img src="{{ recipe.path }}" alt="" />
+        </ion-avatar>
+        <ion-label
+          >{{ recipe.title }}
+          <p
+            [ngClass]="{savoury: recipe.category == 'savoury',salad: recipe.category == 'salad',sweet: recipe.category == 'sweet',drink: recipe.category == 'drink'}"
+          >
+            {{ recipe.category }}
+          </p>
+        </ion-label>
+        <p class="username">@{{ recipe.username}}</p>
+      </ion-item>
+    </ion-item-sliding>
+  </div>
+</ion-content>

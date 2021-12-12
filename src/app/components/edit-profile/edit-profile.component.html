@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="_dismiss()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form enctype="multipart/form-data" #f="ngForm" (ngSubmit)="editProfile(f)">
+    <ion-title>Edit Profile</ion-title>
+
+    <div class="pp-edit-cont">
+      <div class="pp-edit">
+        <img
+          id="display_profile_edit"
+          src="{{
+            user?.path
+              ? user.path
+              : 'https://img.icons8.com/wired/100/000000/guest-male.png'
+          }}"
+          alt=""
+        />
+      </div>
+      <a for="file" onclick="document.getElementById('file').click()"
+        >Change Profile Picture</a
+      >
+      <input
+        ngModel
+        name="path"
+        type="file"
+        id="file"
+        (change)="removeError($event); changeValue($event); chooseFile($event)"
+        accept="image/*"
+        style="display: none"
+      />
+      <span id="span-upload">{{ errors.upload }}</span>
+    </div>
+
+    <div class="edit-name-bio">
+      <h1>Edit Info</h1>
+      <!-- <ion-item lines="none"> -->
+      <ion-label>Username</ion-label>
+      <ion-input
+        class="{{ errors.name ? 'error' : '' }}"
+        type="text"
+        id="proname"
+        ngModel
+        name="file"
+        value="{{ user?.name }}"
+        (keyup)="changeValue($event); removeError($event)"
+      ></ion-input>
+      <span id="span-name">{{ errors.name }}</span>
+      <!-- </ion-item> -->
+      <!-- <ion-item lines="none"> -->
+      <ion-label>Bio</ion-label>
+      <ion-textarea
+        type="text"
+        ngModel
+        name="bio"
+        id="bio"
+        maxlength="300"
+        value="{{ user?.bio }}"
+        (keyup)="biomax(); changeValue($event)"
+      ></ion-textarea>
+      <!-- </ion-item> -->
+      <div id="the-count">
+        <span id="current">0</span>
+        <span id="maximum"> / 300</span>
+      </div>
+    </div>
+
+    <div class="edit-btn">
+      <ion-button type="submit" name="edit">Save Changes</ion-button>
+    </div>
+  </form>
+</ion-content>

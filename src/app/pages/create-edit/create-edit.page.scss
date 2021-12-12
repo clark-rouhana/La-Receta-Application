@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+* {
+  font-family: "Quicksand", sans-serif;
+}
+
+ion-content {
+  span {
+    // width: 100%;
+    color: #ed4337;
+  }
+
+  ion-title {
+    font-weight: 600;
+    font-size: 36px;
+    margin: 20px 0;
+    text-align: center;
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .upload-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    .image-upload {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 40%;
+      height: 150px;
+      border-radius: 30px;
+      margin-left: 10px;
+      border: 2px solid #000;
+
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 30px;
+      }
+    }
+  }
+
+  ion-item {
+    --background: #eee;
+    border-radius: 10px;
+    margin-top: 2rem;
+    width: 80%;
+    //   box-shadow: 0 10px 30px 0px rgba(57, 71, 82, 0.12);
+
+    ion-input,
+    ion-textarea {
+      display: block;
+      width: 100%;
+      background: transparent;
+      font-size: 16px;
+      border: none;
+      outline: none;
+      --color: #636363;
+    }
+
+    ion-select {
+      // position: relative;
+      font-size: 16px;
+    }
+    ion-select::part(text) {
+      --color: #636363;
+      padding-right: 10px;
+    }
+    ion-select::part(icon) {
+      position: absolute;
+      right: 10px;
+    }
+  }
+
+  .error {
+    border: 1px solid #ed4337;
+  }
+
+  ion-item.select {
+    width: 45%;
+  }
+
+  ion-button {
+    --background: #46454d;
+    width: 200px;
+    height: 50px;
+    margin: 50px auto;
+    font-size: 18px;
+  }
+}

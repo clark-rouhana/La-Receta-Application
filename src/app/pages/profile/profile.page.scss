@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+
+  font-family: "Quicksand", sans-serif;
+}
+
+.whole-container {
+  border-bottom: 3px solid #333;
+  display: flex;
+  flex-direction: column;
+
+  .profile-container {
+    width: 100%;
+    display: flex;
+
+    .pp-img {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin: 10px;
+
+      img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 2px solid #000;
+      }
+    }
+
+    .naming {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 250px;
+      #name {
+        font-size: 16px;
+        font-weight: 600;
+        padding: 10px 0;
+      }
+      #biography {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.2;
+      }
+
+      .edit_profile_button {
+        margin-top: 10px;
+
+        ion-button {
+          font-size: 10px;
+          width: 100px;
+          height: 30px;
+          --background: #000;
+        }
+      }
+    }
+  }
+
+  .count-follow {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin: 10px 10px 20px;
+    padding: 15px 0;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #000;
+
+    .row {
+      p {
+        padding: 2px 0;
+      }
+    }
+  }
+
+  .categ-title {
+    text-align: center;
+    border-top: 3px solid #333;
+    ion-title {
+      font-size: 30px;
+      font-weight: 600;
+      padding: 20px 0;
+    }
+  }
+}
+
+// .categories-tabs {
+// display: flex;
+// justify-content: center;
+// align-items: center;
+
+// .button-container {
+//   display: grid;
+//   grid-template-columns: auto auto;
+// }
+
+// .button-container > a {
+//   margin: 20px;
+//   padding: 30px;
+//   font-size: 20px;
+//   text-align: center;
+//   text-decoration: none;
+//   border-radius: 35px;
+//   font-weight: 700;
+// }
+
+// .button-container {
+//   > a.savoury {
+//     color: rgb(190, 118, 118);
+//     box-shadow: rgb(190, 118, 118) 0px -23px 25px 0px inset,
+//       rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+//       rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset,
+//       rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+//       rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+//       rgba(0, 0, 0, 0.09) 0px 32px 16px;
+//   }
+//   > a.salad {
+//     color: rgb(115, 160, 73);
+//     box-shadow: rgb(115, 160, 73) 0px -23px 25px 0px inset,
+//       rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+//       rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset,
+//       rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+//       rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+//       rgba(0, 0, 0, 0.09) 0px 32px 16px;
+//   }
+//   > a.sweet {
+//     color: rgb(182, 172, 83);
+//     box-shadow: rgb(182, 172, 83) 0px -23px 25px 0px inset,
+//       rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+//       rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset,
+//       rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+//       rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+//       rgba(0, 0, 0, 0.09) 0px 32px 16px;
+//   }
+//   > a.drink {
+//     color: rgb(95, 163, 158);
+//     box-shadow: rgb(95, 163, 158) 0px -23px 25px 0px inset,
+//       rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+//       rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset,
+//       rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+//       rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+//       rgba(0, 0, 0, 0.09) 0px 32px 16px;
+//   }
+// }
+
+.main-div {
+  .list {
+    ion-item:part(native) {
+      padding: 0;
+    }
+
+    ion-item {
+      margin-top: 10px;
+      color: #676767;
+      --border-color: #ddd;
+      ion-label {
+        font-size: 1.2rem;
+        font-weight: 500;
+        padding-left: 10px;
+        p {
+          font-size: 0.8rem;
+          margin-top: 5px;
+        }
+        p.savoury {
+          color: rgb(190, 118, 118);
+        }
+        p.salad {
+          color: rgb(115, 160, 73);
+        }
+        p.sweet {
+          color: rgb(182, 172, 83);
+        }
+        p.drink {
+          color: rgb(95, 163, 158);
+        }
+      }
+    }
+    ion-item-sliding:last-child {
+      margin-bottom: 50px;
+    }
+    ion-item-sliding.item-sliding-active-option-end ion-item {
+      padding-right: 20px;
+    }
+    ion-item-option {
+      margin-top: 10.5px;
+      margin-trim: 4px;
+    }
+  }
+
+  ion-fab-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+  }
+}
+// }

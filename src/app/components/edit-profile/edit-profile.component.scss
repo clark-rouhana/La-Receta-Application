@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+* {
+  font-family: "Quicksand", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+ion-content {
+  #span-name,
+  #span-upload {
+    color: #ed4337;
+    text-align: center;
+  }
+
+  #span-name {
+    margin-bottom: 15px;
+  }
+
+  ion-title {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 36px;
+    font-weight: 600;
+  }
+
+  .pp-edit-cont {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 40px;
+  }
+
+  .pp-edit-cont .pp-edit {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 3px solid #000;
+    }
+  }
+
+  .pp-edit-cont a {
+    padding: 20px;
+    padding-bottom: 5px;
+    font-size: 15px;
+    color: #252c6a;
+  }
+
+  .edit-name-bio {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+      margin: 20px;
+      font-size: 22px;
+      color: rgb(73, 73, 73);
+      border-bottom: 2px dotted rgb(73, 73, 73);
+    }
+
+    ion-label {
+      font-size: 18px;
+      padding: 10px;
+      font-weight: 600;
+      --color: rgb(73, 73, 73);
+    }
+    ion-input {
+      width: 50%;
+      font-size: 14px;
+      margin-bottom: 5px;
+      border: 1px solid #000;
+      border-radius: 5px;
+    }
+
+    .error {
+      border: 1px solid #ed4337;
+    }
+
+    ion-textarea {
+      width: 60%;
+      height: 100px;
+      padding-right: 8px;
+      font-size: 13px;
+      resize: none;
+      border: 1px solid #000;
+      border-radius: 5px;
+    }
+
+    #the-count {
+      padding: 0.1rem 0 0 0;
+      font-size: 0.875rem;
+    }
+  }
+
+  .edit-btn {
+    width: 100%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    ion-button {
+      width: 150px;
+      padding: 3px 20px;
+      border-radius: 4px;
+      font-size: 12px;
+      border: none;
+      outline: none;
+      --color: #fff;
+      --background: rgb(128, 128, 128);
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-transform: capitalize;
+    }
+  }
+}

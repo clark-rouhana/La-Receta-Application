@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+* {
+  font-family: "Quicksand", sans-serif;
+}
+
+ion-content {
+  span {
+    width: 100%;
+    color: #ed4337;
+  }
+
+  span.wrong {
+    text-align: center;
+  }
+
+  .ion-padding {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .logo {
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .logo ion-img {
+    //   width: 53%;
+    width: 200px;
+    margin-bottom: 2rem;
+  }
+
+  ion-title {
+    font-size: 40px;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  ion-item {
+    --background: #eee;
+    border-radius: 4px;
+    margin-top: 2rem;
+    //   box-shadow: 0 10px 30px 0px rgba(57, 71, 82, 0.12);
+
+    ion-input {
+      display: block;
+      width: 100%;
+      background: transparent;
+      font-size: 16px;
+      border: none;
+      outline: none;
+      --color: #636363;
+    }
+  }
+  .error {
+    border: 1px solid #ed4337;
+  }
+
+  ion-item.item-has-focus > ion-label {
+    color: #ff8e8e !important;
+  }
+
+  .form-check {
+    position: relative;
+    display: block;
+    padding-left: 1.25rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    ion-checkbox {
+      position: absolute;
+      margin-left: -1.25rem;
+      // filter: invert(100%) hue-rotate(18deg) brightness(1.7);
+      --checkmark-color: #fff;
+      --background-checked: #ff8e8e;
+      --border-color: black;
+      --border-color-checked: #ff8e8e;
+    }
+
+    ion-label {
+      padding-left: 0.3rem;
+    }
+  }
+
+  ion-button {
+    --background: #ff8e8e;
+    height: 48px;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .form-text {
+    text-align: center;
+  }
+
+  .form-forgot {
+    margin-top: 2rem;
+  }
+
+  .form-link {
+    color: #252c6a;
+    text-decoration: none;
+  }
+}

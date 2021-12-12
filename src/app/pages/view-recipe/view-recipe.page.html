@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title
+      [ngClass]="{savoury: recipe?.category == 'savoury',salad: recipe?.category == 'salad',sweet: recipe?.category == 'sweet',drink: recipe?.category == 'drink'}"
+      >{{ recipe?.title }} - {{ recipe?.category }}</ion-title
+    >
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="recipe-image">
+    <img src="{{ recipe?.path }}" alt="" />
+  </div>
+
+  <div class="recipe-container">
+    <div class="title">
+      <h1
+        [ngClass]="{savoury: recipe?.category == 'savoury',salad: recipe?.category == 'salad',sweet: recipe?.category == 'sweet',drink: recipe?.category == 'drink'}"
+      >
+        {{ recipe?.title }}
+      </h1>
+    </div>
+    <p>@{{ recipe?.username }}</p>
+
+    <div class="ingredients">
+      <h1>Ingredients</h1>
+      <p style="white-space: pre-line">{{ recipe?.ingredients }}</p>
+    </div>
+    <div class="instructions">
+      <h1>Instructions</h1>
+      <p style="white-space: pre-line">{{ recipe?.instructions }}</p>
+    </div>
+    <div class="instructions"></div>
+  </div>
+</ion-content>

@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="logo">
+    <ion-img src="../../../assets/images/la_receta_logo.png" alt=""> </ion-img>
+  </div>
+
+  <div class="post" *ngFor="let recipe of recipes">
+    <div class="user">
+      <div class="profile" id="display_profile_home">
+        <img
+          src="https://img.icons8.com/wired/100/000000/guest-male.png"
+          alt=""
+        />
+      </div>
+      <p class="username">{{ recipe.username }}</p>
+    </div>
+    <div class="main_post">
+      <img src="{{ recipe.path }}" alt="" />
+    </div>
+    <div class="like_share_save">
+      <ion-icon class="like" name="heart-outline"></ion-icon>
+      <ion-icon class="share" name="paper-plane-outline"></ion-icon>
+      <ion-icon class="save" name="bookmark-outline"></ion-icon>
+    </div>
+    <p class="caption">
+      <span>{{ recipe.username }}</span> - {{ recipe.caption }}
+    </p>
+  </div>
+</ion-content>
